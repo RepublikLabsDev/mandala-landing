@@ -1,0 +1,16 @@
+node_modules
+dist
+*.log
+.DS_Store
+_to_delete
+
+# Internal working notes and design-QA artefacts. The Pages repo has to be
+# public for free hosting, so anything in it is world-readable — keep the
+# working material out and let it stay in Drive.
+AGENTS.md
+EDITABLE-HANDOVER.md
+design-qa.md
+archive-superseded/
+*.jpg
+approved-design-exact.png
+source-design.png

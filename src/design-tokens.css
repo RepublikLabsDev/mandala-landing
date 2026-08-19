@@ -1,0 +1,15 @@
+:root {
+  --mandala-blue: #1d4fd8;
+  --mandala-blue-deep: #123fb9;
+  --mandala-cyan: #43c6ff;
+  --mandala-ink: #0b0d13;
+  --mandala-muted: #66728a;
+  --mandala-line: #dce5f2;
+  --mandala-band: #f1f6fc;
+  --mandala-positive: #08a56a;
+  --page-width: 1280px;
+  --section-space: 110px;
+  --panel-radius: 18px;
+  --control-radius: 8px;
+  --soft-shadow: 0 18px 45px rgba(29, 79, 216, 0.08);
+}
