@@ -5,8 +5,8 @@ import { LendSection } from './components/LendSection';
 import { LaunchSection } from './components/LaunchSection';
 import { EarnSection } from './components/EarnSection';
 import { ClosingSection } from './components/ClosingSection';
+import { AppLink } from './components/Primitives';
 
-const appUrl = 'https://mandala-finance-swap.up.railway.app/swap';
 const Mark = ({ className = '' }) => <img className={`mark ${className}`} src="/assets/mandala-icon.png" alt="" />;
 const Arrow = () => <span aria-hidden="true">→</span>;
 
@@ -134,7 +134,7 @@ function HeroOrb() {
 }
 
 export function HeroSection() {
-  return <section className="hero" id="top"><div className="hero-copy"><h1>Powering the <span className="mixed"><b>full lifecycle</b> of</span><span>onchain capital.</span></h1><p>Trade, allocate and grow from one connected DeFi platform.</p><div className="actions"><a className="button" href={appUrl} target="_blank" rel="noreferrer">Launch App <Arrow /></a></div></div><HeroOrb /></section>;
+  return <section className="hero" id="top"><div className="hero-copy"><h1>Powering the <span className="mixed"><b>full lifecycle</b> of</span><span>onchain capital.</span></h1><p>Trade, allocate and grow from one connected DeFi platform.</p><div className="actions"><AppLink className="button" path="/swap">Launch App <Arrow /></AppLink></div></div><HeroOrb /></section>;
 }
 
 export function App(){useEffect(()=>{const handler=e=>{const a=e.target.closest?.('a[href^="#"]');if(a){const target=document.querySelector(a.getAttribute('href'));if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth'})}}};document.addEventListener('click',handler);return()=>document.removeEventListener('click',handler)},[]);return <><EditableHeader/><main><HeroSection/><EditableRouterSection/><LendSection/><LaunchSection/><EarnSection/><ClosingSection/></main></>}

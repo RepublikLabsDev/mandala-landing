@@ -1,5 +1,4 @@
-import { appUrl } from '../content';
-import { Arrow, Mark } from './Primitives';
+import { AppLink, Arrow, Mark } from './Primitives';
 
 /**
  * Staking and rewards.
@@ -25,7 +24,7 @@ export function EarnSection() {
       <div><span>Claim</span><b>Any time</b></div>
       <div><span>Unstake</span><b>Never locked</b></div>
       <div><span>What you stake</span><b>A token or an LP position</b></div>
-      <a href={appUrl.replace('/swap', '/stake')}>Open staking <Arrow /></a>
+      <AppLink path="/stake">Open staking <Arrow /></AppLink>
     </div>
   </div></section>;
 }

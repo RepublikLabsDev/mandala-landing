@@ -70,3 +70,14 @@ h1 .mixed{color:var(--ink)}h1 .mixed b{color:var(--blue);font-weight:inherit}
   .lend-band .workspace{grid-template-columns:1fr}
   .lend-band .workspace>div{border-right:0;border-bottom:1px solid var(--line)}
 }
+
+/* --- Inert calls to action ----------------------------------------------
+   The public app does not exist yet, so every link into it renders without an
+   href (see AppLink in components/Primitives.jsx). Styling them by
+   [aria-disabled] rather than a class means the state is driven by the same
+   attribute assistive tech reads, so the two cannot drift apart.
+
+   Dimmed deliberately. A full-strength blue button that swallows the click
+   reads as a broken site; a dimmed one reads as not launched yet, which is
+   the truth. Delete this block to make them look live again. */
+a[aria-disabled="true"]{opacity:.42;cursor:default;pointer-events:none}

@@ -1,4 +1,14 @@
-export const appUrl = 'https://mandala-finance-swap.up.railway.app/swap';
+// The public app does not exist yet. Until it does this MUST stay null.
+//
+// It used to point at mandala-finance-swap.up.railway.app, which is the
+// INTERNAL build: it has Sepolia enabled and is for the team only. This page is
+// public at mandala.finance, so any link to that host puts the testnet build in
+// front of the world.
+//
+// When app.mandala.finance is live, set this to 'https://app.mandala.finance'
+// (base only, no path — AppLink appends /swap, /lend, /stake) and every call to
+// action on the page comes back to life at once. Nothing else needs changing.
+export const appUrl = null;
 
 // The app's features, in the order the page presents them. No "Learn" tab:
 // the FAQ is the bottom of the page, not a product.

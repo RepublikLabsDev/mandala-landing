@@ -1,5 +1,5 @@
-import { appUrl, borrowRows } from '../content';
-import { Arrow } from './Primitives';
+import { borrowRows } from '../content';
+import { AppLink, Arrow } from './Primitives';
 
 /**
  * Lend and borrow.
@@ -25,13 +25,13 @@ export function LendSection() {
         <label>Asset <b>USDC</b><strong>5,000</strong></label>
         <label>Earning <b>Supply APY</b><strong>4.10%</strong></label>
         <div className="micro"><span>Withdraw</span><b>Any time</b></div>
-        <a className="button compact" href={appUrl.replace('/swap', '/lend')}>Supply <Arrow /></a>
+        <AppLink className="button compact" path="/lend">Supply <Arrow /></AppLink>
       </div>
 
       <div className="route-panel"><small>Borrowing power</small>
         <h3>3,750 USDC <Arrow /> available to borrow</h3>
         {borrowRows.map(([name, value]) => <div className="route-row" key={name}><span>{name}</span><i style={{ '--width': value }} /><b>{value}</b></div>)}
-        <a href={appUrl.replace('/swap', '/lend')}>Open lend / borrow <Arrow /></a>
+        <AppLink path="/lend">Open lend / borrow <Arrow /></AppLink>
       </div>
 
       <div className="portfolio-panel"><small>Position health</small>
