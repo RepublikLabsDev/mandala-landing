@@ -12,5 +12,8 @@ EDITABLE-HANDOVER.md
 design-qa.md
 archive-superseded/
 *.jpg
+# ...but the landing page ships real .jpg assets. The rule above is for the
+# QA screenshots in the repo root, not for anything served to users.
+!public/assets/landing/**/*.jpg
 approved-design-exact.png
 source-design.png
