@@ -51,7 +51,11 @@
     a { color: inherit; text-decoration: none; }
     button { font: inherit; }
     main { width: 100%; overflow: hidden; }
-    .screen { position: relative; width: 100%; height: 1000px; overflow: hidden; isolation: isolate; }
+    .screen {
+      position: relative; width: 100%;
+      height: 100vh; min-height: 820px; max-height: 1000px;
+      overflow: hidden; isolation: isolate;
+    }
     .container { width: var(--page); height: 100%; margin: 0 auto; position: relative; z-index: 4; }
 
     html[data-view] body { width: 1440px; height: 1000px; overflow: hidden; }
@@ -151,7 +155,7 @@
       color: var(--navy); background: rgba(255,255,255,.94);
       font-size: 13px; font-weight: 720; box-shadow: 0 12px 30px rgba(0, 13, 51, .22);
     }
-    .hero-copy { position: absolute; top: 230px; left: 0; width: 710px; }
+    .hero-copy { position: absolute; top: 52%; transform: translateY(-50%); left: 0; width: 710px; }
     .hero-copy .eyebrow { color: rgba(255,255,255,.7); }
     .hero-copy h1 {
       margin: 0;
@@ -209,6 +213,22 @@
     }
     .liquidity-copy { position: absolute; top: 50%; transform: translateY(-50%); left: 0; width: 470px; }
     .liquidity-copy .section-copy { width: 420px; }
+    .router-chip {
+      display: inline-flex; align-items: center; gap: 12px; margin-top: 30px;
+      padding: 10px 16px 10px 11px; border-radius: 13px;
+      background: linear-gradient(150deg, rgba(255,255,255,.92), rgba(226,239,253,.78));
+      border: 1px solid rgba(120,160,215,.34);
+      box-shadow: 0 12px 26px rgba(28,72,140,.13), inset 0 1px 0 rgba(255,255,255,.9);
+      backdrop-filter: blur(14px);
+    }
+    .router-chip .die {
+      width: 40px; height: 40px; border-radius: 9px; display: grid; place-items: center;
+      background: linear-gradient(145deg, #2f6ef0, #0f3fb6);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.45), 0 5px 12px rgba(15,63,182,.34);
+    }
+    .router-chip .lines { display: grid; gap: 3px; }
+    .router-chip .lines b { font-size: 12px; font-weight: 780; letter-spacing: .1em; text-transform: uppercase; color: #14264a; line-height: 1; }
+    .router-chip .lines i { font-style: normal; font-size: 10px; font-weight: 650; letter-spacing: .13em; text-transform: uppercase; color: #6a7d9c; line-height: 1; }
     /* Lend */
     .lend-screen { background: #d7ecff; }
     .lend-bg { position: absolute; inset: 0; z-index: -3; background: url("assets/landing/cloud-terraces.png") center / cover no-repeat; }
@@ -220,10 +240,11 @@
       content: ""; position: absolute; inset: 0; z-index: -1;
       background: linear-gradient(180deg, rgba(255,255,255,.14), transparent 55%, rgba(15,56,118,.16));
     }
-    .lend-copy { position: absolute; top: 162px; left: 0; width: 475px; }
+    .lend-copy { position: absolute; top: 50%; transform: translateY(-50%); left: 0; width: 475px; }
     .lend-copy .section-copy { color: #465a78; }
     .lend-workspace {
-      position: absolute; top: 120px; right: 0; width: 710px; height: 758px;
+      position: absolute; top: 50%; right: 0; width: 710px; height: 758px;
+      transform: translateY(-50%) scale(.92); transform-origin: center right;
     }
     .supply-panel {
       position: absolute; top: 62px; left: 0; width: 430px; height: 500px; border-radius: 30px; padding: 28px;
@@ -280,23 +301,22 @@
       content: ""; position: absolute; inset: 0; z-index: -1;
       background: linear-gradient(180deg, rgba(4,14,43,.14), transparent 55%, rgba(3,12,38,.58));
     }
-    .launch-copy { position: absolute; top: 148px; left: 0; width: 520px; }
+    .launch-copy { position: absolute; top: 14%; left: 0; width: 520px; }
     .launch-copy .eyebrow { color: #a8dfff; }
     .launch-copy .section-copy { color: rgba(255,255,255,.68); }
     .launch-flow {
-      position: absolute; left: 0; right: 0; bottom: 104px; height: 330px;
+      position: absolute; left: 0; right: 0; bottom: 13%; height: 300px;
       display: grid; grid-template-columns: 1fr 66px 1fr 66px 1fr; align-items: center;
     }
     .launch-card {
-      height: 278px; border-radius: 26px; padding: 24px; position: relative; overflow: hidden;
+      height: 264px; border-radius: 26px; padding: 22px; position: relative; overflow: hidden; text-align: center;
       background: rgba(7,32,80,.58); border: 1px solid rgba(255,255,255,.17);
       box-shadow: 0 25px 60px rgba(0,10,38,.3); backdrop-filter: blur(22px) saturate(120%);
     }
     .launch-card::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 76% 16%, rgba(67,198,255,.18), transparent 38%); }
-    .launch-card .step { display: flex; justify-content: space-between; align-items: center; position: relative; }
-    .launch-card .step b { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; color: white; background: rgba(67,198,255,.16); border: 1px solid rgba(111,219,255,.35); font-size: 11px; }
+    .launch-card .step { display: flex; justify-content: center; align-items: center; position: relative; }
     .launch-card .step small { color: rgba(255,255,255,.46); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; font-weight: 750; }
-    .launch-icon { height: 91px; margin: 24px 0 16px; display: grid; place-items: center; position: relative; }
+    .launch-icon { height: 84px; margin: 20px 0 14px; display: grid; place-items: center; position: relative; }
     .asset-cube { width: 64px; height: 64px; border-radius: 18px; transform: rotate(45deg); border: 1px solid rgba(255,255,255,.48); background: linear-gradient(145deg, rgba(255,255,255,.26), rgba(67,198,255,.07)); box-shadow: 0 15px 38px rgba(26,133,232,.24); }
     .asset-cube::after { content: ""; position: absolute; inset: 15px; border: 1px solid rgba(255,255,255,.42); border-radius: 7px; }
     .offering-rings { width: 92px; height: 92px; border-radius: 50%; border: 1px solid rgba(120,220,255,.45); position: relative; box-shadow: 0 0 34px rgba(67,198,255,.16); }
@@ -322,10 +342,10 @@
       content: ""; position: absolute; inset: 0; z-index: -1;
       background: radial-gradient(circle at 73% 50%, rgba(255,225,177,.18), transparent 29%);
     }
-    .stake-copy { position: absolute; top: 452px; transform: translateY(-50%); left: 0; width: 475px; }
+    .stake-copy { position: absolute; top: 50%; transform: translateY(-50%); left: 0; width: 475px; }
     .stake-copy .eyebrow { color: #b3e4ff; }
     .stake-copy .section-copy { color: rgba(255,255,255,.7); }
-    .stake-orbit { position: absolute; top: 105px; right: 0; width: 695px; height: 695px; display: grid; place-items: center; }
+    .stake-orbit { position: absolute; top: 50%; transform: translateY(-50%); right: 0; width: 660px; height: 660px; display: grid; place-items: center; }
     .stake-orbit .ring { position: absolute; border-radius: 50%; border: 1px solid rgba(188,235,255,.24); box-shadow: 0 0 60px rgba(65,192,255,.06); }
     .stake-orbit .r1 { width: 560px; height: 560px; }
     .stake-orbit .r2 { width: 425px; height: 425px; border-color: rgba(188,235,255,.34); }
@@ -342,7 +362,7 @@
     .orbit-label.two { left: 44px; top: 344px; }
     .orbit-label.three { right: 32px; bottom: 110px; }
     .stake-panel {
-      position: absolute; left: 0; bottom: 74px; width: 520px; height: 190px; border-radius: 24px; padding: 22px 24px;
+      position: absolute; left: 0; bottom: 8%; width: 520px; height: 190px; border-radius: 24px; padding: 22px 24px;
       display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px;
     }
     .stake-panel h3 { margin: 0 0 18px; font-size: 15px; }
@@ -386,7 +406,7 @@
       main { overflow-x: hidden; }
 
       .screen {
-        height: auto; min-height: 0; aspect-ratio: auto;
+        height: auto; min-height: 0; max-height: none; aspect-ratio: auto;
         display: flex; flex-direction: column;
       }
       .container {
@@ -607,10 +627,25 @@
               <stop offset="0" stop-color="#fff" stop-opacity="1"></stop><stop offset="1" stop-color="#fff" stop-opacity="0"></stop>
             </linearGradient>
             <mask id="mdMask"><rect width="1000" height="1000" fill="url(#mdFade)"></rect></mask>
+          <radialGradient id="mdDome" cx="0.33" cy="0.26" r="0.72">
+            <stop offset="0" stop-color="#ffffff" stop-opacity=".58"></stop>
+            <stop offset="0.42" stop-color="#ffffff" stop-opacity=".12"></stop>
+            <stop offset="1" stop-color="#ffffff" stop-opacity="0"></stop>
+          </radialGradient>
+          <radialGradient id="mdEdge" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0.70" stop-color="#00266e" stop-opacity="0"></stop>
+            <stop offset="0.93" stop-color="#00266e" stop-opacity=".14"></stop>
+            <stop offset="1" stop-color="#00266e" stop-opacity=".30"></stop>
+          </radialGradient>
+          <radialGradient id="mdSpec" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0" stop-color="#ffffff" stop-opacity=".8"></stop>
+            <stop offset="1" stop-color="#ffffff" stop-opacity="0"></stop>
+          </radialGradient>
           </defs>
           <circle cx="500" cy="500" r="500" fill="url(#mdBot)"></circle>
           <circle cx="500" cy="500" r="500" fill="url(#mdTop)" mask="url(#mdMask)"></circle>
-          <circle cx="500" cy="500" r="496" fill="none" stroke="#ffffff" stroke-opacity=".92" stroke-width="8"></circle>
+          <circle cx="500" cy="500" r="500" fill="url(#mdDome)"></circle>
+          <ellipse cx="366" cy="284" rx="198" ry="130" fill="url(#mdSpec)" opacity=".45" transform="rotate(-24 366 284)"></ellipse>
           <g transform="translate(140,140) scale(1.40625)" fill="#ffffff">
             <rect x="195.5" y="195.5" width="121" height="121" rx="3"></rect>
             <polygon points="197.5,164.5 314.5,164.5 256,63"></polygon>
@@ -618,12 +653,15 @@
             <polygon points="164.5,197.5 164.5,314.5 63,256"></polygon>
             <polygon points="347.5,197.5 347.5,314.5 449,256"></polygon>
           </g>
+          <circle cx="500" cy="500" r="500" fill="url(#mdEdge)"></circle>
+          <circle cx="500" cy="500" r="496" fill="none" stroke="#ffffff" stroke-opacity=".92" stroke-width="8"></circle>
         </svg>
       </div>
       <div class="container">
         <div class="liquidity-copy">
           <h2 class="section-title">Liquidity from<br>everywhere.</h2>
           <p class="section-copy">Every swap is quoted across native and external liquidity, and routed down the best path found.</p>
+          <div class="router-chip"><span class="die"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"><rect x="7.5" y="7.5" width="9" height="9" rx="1.4" stroke-opacity=".95"></rect><path d="M10 4.5v3M14 4.5v3M10 16.5v3M14 16.5v3M4.5 10h3M4.5 14h3M16.5 10h3M16.5 14h3" stroke-opacity=".8"></path></svg></span><span class="lines"><b>Mandala</b><i>Smart Router</i></span></div>
         </div>
 
     </section>
@@ -670,11 +708,11 @@
         </div>
 
         <div class="launch-flow">
-          <article class="launch-card"><div class="step"><b>1</b><small>RWA / DAO asset</small></div><div class="launch-icon"><div class="asset-cube"></div></div><h3>Verify &amp; prepare</h3><p>RWA / DAO asset</p></article>
+          <article class="launch-card"><div class="step"><small>RWA / DAO asset</small></div><div class="launch-icon"><div class="asset-cube"></div></div><h3>Verify &amp; prepare</h3><p>RWA / DAO asset</p></article>
           <div class="flow-arrow"><span>→</span></div>
-          <article class="launch-card"><div class="step"><b>2</b><small>Onchain raise</small></div><div class="launch-icon"><div class="offering-rings"></div></div><h3>Compliant token offering</h3><p>Onchain raise</p></article>
+          <article class="launch-card"><div class="step"><small>Onchain raise</small></div><div class="launch-icon"><div class="offering-rings"></div></div><h3>Compliant token offering</h3><p>Onchain raise</p></article>
           <div class="flow-arrow"><span>→</span></div>
-          <article class="launch-card"><div class="step"><b>3</b><small>Your token / USDC</small></div><div class="launch-icon"><div class="market-icon"><i style="--h:38%"></i><i style="--h:64%"></i><i style="--h:52%"></i><i style="--h:88%"></i><i style="--h:71%"></i></div></div><h3>Live market</h3><p>Locked liquidity</p></article>
+          <article class="launch-card"><div class="step"><small>Your token / USDC</small></div><div class="launch-icon"><div class="market-icon"><i style="--h:38%"></i><i style="--h:64%"></i><i style="--h:52%"></i><i style="--h:88%"></i><i style="--h:71%"></i></div></div><h3>Live market</h3><p>Locked liquidity</p></article>
         </div>
       </div>
     </section>
