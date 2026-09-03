@@ -1,14 +1,15 @@
-// The public app does not exist yet. Until it does this MUST stay null.
+// The public app, live at app.mandala.finance since 3 Sep 2026.
 //
-// It used to point at mandala-finance-swap.up.railway.app, which is the
-// INTERNAL build: it has Sepolia enabled and is for the team only. This page is
-// public at mandala.finance, so any link to that host puts the testnet build in
-// front of the world.
+// Base only, no path: AppLink appends /swap, /lend and /stake.
 //
-// When app.mandala.finance is live, set this to 'https://app.mandala.finance'
-// (base only, no path — AppLink appends /swap, /lend, /stake) and every call to
-// action on the page comes back to life at once. Nothing else needs changing.
-export const appUrl = null;
+// It must NEVER point at mandala-internal-testing.up.railway.app (previously
+// mandala-finance-swap.up.railway.app). That is the INTERNAL build: Sepolia is
+// selectable on it and the launchpad is open. This page is public at
+// mandala.finance, so linking there would put the testnet build and a live
+// token launcher in front of the world. The public build parks Lend and
+// Tokenize behind placeholders and offers Ethereum only, which is why it is
+// the only host this may name.
+export const appUrl = 'https://app.mandala.finance';
 
 // The app's features, in the order the page presents them. No "Learn" tab:
 // the FAQ is the bottom of the page, not a product.
