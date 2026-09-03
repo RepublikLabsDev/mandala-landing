@@ -11,7 +11,8 @@
     <meta property="og:description" content="Trade, allocate and grow from one connected DeFi platform." />
     <meta property="og:image" content="/assets/landing/hero-options/hero-B.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preload" as="image" href="/assets/landing/hero-options/hero-B.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="/assets/landing/hero-options/hero-B.jpg" fetchpriority="high" media="(min-width: 561px)" />
+    <link rel="preload" as="image" href="/assets/landing/hero-options/hero-B-mobile.jpg" fetchpriority="high" media="(max-width: 560px)" />
 
   <script>
     const requestedView = new URLSearchParams(location.search).get('view');
@@ -560,7 +561,10 @@
          immediately below, so the header keeps the brand and the menu. */
       .header-cta { display: none; }
       .site-header { grid-template-columns: 1fr auto; }
-      .hero-bg { height: 240px; }
+      .hero-bg {
+        height: 240px;
+        background-image: url("assets/landing/hero-options/hero-B-mobile.jpg");
+      }
       .reservoir-visual { height: 260px; }
       .asset-row strong { font-size: 24px; }
       .borrow-panel h3 { font-size: 22px; }
