@@ -55,7 +55,10 @@
     main { width: 100%; overflow: hidden; }
     .screen {
       position: relative; width: 100%;
-      height: 100vh; min-height: 820px; max-height: 1000px;
+      height: 100vh;
+      height: 100svh;
+      min-height: 720px;
+      max-height: none;
       overflow: hidden; isolation: isolate;
     }
     .container { width: var(--page); height: 100%; margin: 0 auto; position: relative; z-index: 4; }
@@ -535,7 +538,7 @@
             <span class="brand-type"><b>MANDALA</b><small>FINANCE</small></span>
           </a>
           <nav class="nav" aria-label="Main navigation">
-            <a href="#liquidity">Swap</a><a href="#lend">Lend / Borrow</a><a href="#launch">Tokenize</a><a href="#stake">Stake</a>
+            <a href="#liquidity">Swap</a><a href="#lend">Lend / Borrow</a><a href="#launch">Tokenize</a><a href="#lend">Stake</a>
           </nav>
           <a class="header-cta" href="https://app.mandala.finance/swap" target="_blank" rel="noreferrer">Launch App <span>→</span></a>
           <details class="nav-menu">

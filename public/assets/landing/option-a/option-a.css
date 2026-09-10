@@ -625,6 +625,17 @@
   .oa-tokenize .oa-title span { white-space: nowrap; }
 }
 
+/* Full-height desktop chapters. Content stays vertically balanced while each
+   chapter owns the viewport, so the following section never peeks through. */
+@media (min-width: 1280px) {
+  .oa-section {
+    display: grid;
+    align-items: center;
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+}
+
 @media (max-width: 1120px) {
   .oa-section { min-height: 0; padding: 72px 0 62px; }
   .oa-shell { width: min(760px, calc(100% - 44px)); }
